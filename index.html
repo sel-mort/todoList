@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="top">To-Do App</h1>
+        <div class="wrapper">
+            <div class="controls">
+                <input v-model="newTodo" @keyup.enter="addTodo" type="text" placeholder="Add New task" autofocus>
+                <button class="add" @click="addTodo">+</button>
+                <button class="clear" @click="clearTodos">X</button>
+            </div>
+            <ul>
+                <todo-item v-for="(todo, index) in todos" :title="todo.title" :completed="todo.completed" @toggle="toggle(index)" @delete="deleteTodo(index)"></todo-item>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
