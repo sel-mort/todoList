@@ -2,10 +2,10 @@ Vue.component('todo-item', {
     props: ['title', 'completed'],
     template: `
   <li>
-    <button class="btn"
+    <button class="btn toggle"
             :class="{ done: this.completed }"
             @click="$emit('toggle')">O</button>
-    <button class="btn"
+    <button class="btn delete"
             :class="{ delete: this.completed }"
             @click="$emit('delete')">X</button>
     <span :class="{ completed: this.completed }">
@@ -19,7 +19,15 @@ const app = new Vue({
     el: '#app',
     data: {
         newTodo: '',
-        todos: [{ title: 'Just a todo', completed: true }]
+        todos: [{
+                title: 'testing todo',
+                completed: true
+            },
+            {
+                title: 'not done todo',
+                completed: false
+            }
+        ]
     },
     methods: {
         addTodo() {

@@ -14,7 +14,7 @@
         <h1 class="top">To-Do App</h1>
         <div class="wrapper">
             <div class="controls">
-                <input v-model="newTodo" @keyup.enter="addTodo" type="text" placeholder="Add New task" autofocus>
+                <input type="text" placeholder="Add New task" @keyup.enter="addTodo" v-model="newTodo" autofocus>
                 <button class="add" @click="addTodo">+</button>
                 <button class="clear" @click="clearTodos">X</button>
             </div>

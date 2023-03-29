@@ -112,6 +112,12 @@ button.remove:hover {
     margin: auto 2px auto 0px;
 }
 
+.toggle,
+.delete {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .done:hover {
     background-color: #007a29;
 }
